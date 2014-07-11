@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+def prob_version = "2.0.0-milestone-14-SNAPSHOT"
+
+repositories {
+	maven {
+		name "cobra"
+		url "http://cobra.cs.uni-duesseldorf.de/artifactory/repo"
+	}
+}
+
+dependencies {
+	compile "de.prob:de.prob.core.kernel:${prob_version}"
+}
+
+
