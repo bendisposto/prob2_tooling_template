@@ -1,8 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-
-def prob_version = "2.0.0-milestone-14-SNAPSHOT"
+def prob_version = "2.0.0-milestone-17-SNAPSHOT"
 def mainClass = "HelloProB"
 
 repositories {
@@ -13,7 +12,7 @@ repositories {
 }
 
 dependencies {
-	compile "de.prob:de.prob.core.kernel:${prob_version}"
+	compile "de.prob2:de.prob2.kernel:${prob_version}"
 }
 
 task run(type:JavaExec) {
