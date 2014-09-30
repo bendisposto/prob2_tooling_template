@@ -20,3 +20,4 @@ task run(type:JavaExec) {
    args = ["-s", "-local"]
    classpath = sourceSets.main.runtimeClasspath
 }
+

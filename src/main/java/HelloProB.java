@@ -18,9 +18,13 @@ public class HelloProB {
 	public static void main(String[] args) {
 
 		Main m = Main.getInjector().getInstance(Main.class);
-		runProB(m, args);
+		//runProB(m, args);
 
 		Api api = Main.getInjector().getInstance(Api.class);
+
+		System.out.println("\n\n #### Fetching probcli");
+	    api.upgrade("latest");
+
 		System.out.println("\n\n ####  ProB Binary Version: "+api.getVersion()+"\n\n");
     System.exit(0);
 	}
