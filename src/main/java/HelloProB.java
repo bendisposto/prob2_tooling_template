@@ -23,7 +23,7 @@ public class HelloProB {
 		Api api = Main.getInjector().getInstance(Api.class);
 
 		System.out.println("\n\n #### Fetching probcli");
-	    api.upgrade("latest");
+	    api.upgrade("milestone-25");
 
 		System.out.println("\n\n ####  ProB Binary Version: "+api.getVersion()+"\n\n");
     System.exit(0);
