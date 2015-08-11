@@ -1,10 +1,15 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-def prob_version = "2.0.0-milestone-25"
+def prob_version = "2.0.0-milestone-29-SNAPSHOT"
 def mainClass = "HelloProB"
 
 repositories {
+	mavenCentral()
+	maven {
+		name "snapshot"
+		url "https://oss.sonatype.org/content/repositories/snapshots/"
+	}
 	maven {
 		name "cobra"
 		url "http://cobra.cs.uni-duesseldorf.de/artifactory/repo"
@@ -12,7 +17,7 @@ repositories {
 }
 
 dependencies {
-	compile "de.prob2:de.prob2.kernel:${prob_version}"
+	compile "de.hhu.stups:de.prob2.kernel:${prob_version}"
 }
 
 task run(type:JavaExec) {
@@ -20,4 +25,3 @@ task run(type:JavaExec) {
    args = ["-s", "-local"]
    classpath = sourceSets.main.runtimeClasspath
 }
-

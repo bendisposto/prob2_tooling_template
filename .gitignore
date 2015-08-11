@@ -5,3 +5,4 @@
 prob_log.txt
 .settings
 build
+*.log
