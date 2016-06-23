@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-def prob_version = "2.0.0-milestone-29-SNAPSHOT"
+def prob_version = "2.0.0"
 def mainClass = "HelloProB"
 
 repositories {
@@ -9,10 +9,6 @@ repositories {
 	maven {
 		name "snapshot"
 		url "https://oss.sonatype.org/content/repositories/snapshots/"
-	}
-	maven {
-		name "cobra"
-		url "http://cobra.cs.uni-duesseldorf.de/artifactory/repo"
 	}
 }
 
