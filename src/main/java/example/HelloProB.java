@@ -1,6 +1,9 @@
 package example;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -15,8 +18,6 @@ import de.be4.classicalb.core.parser.exceptions.BException;
 import de.prob.animator.domainobjects.AbstractEvalResult;
 import de.prob.animator.domainobjects.ClassicalB;
 import de.prob.animator.domainobjects.IEvalElement;
-import de.prob.model.representation.ModelElementList;
-import de.prob.model.representation.Variable;
 import de.prob.scripting.Api;
 import de.prob.statespace.State;
 import de.prob.statespace.StateSpace;
@@ -33,11 +34,13 @@ public class HelloProB {
 		this.api = api;
 	}
 
-	public void exampleUsage() throws BException, IOException {
-		System.out.println("ProB version: "+ api.getVersion());
+	public void exampleUsage() throws BException, IOException, URISyntaxException {
+		System.out.println("ProB version: " + api.getVersion());
 		System.out.println();
 		System.out.println("Load classical B Machine");
-		StateSpace stateSpace = api.b_load("ACounter.mch");
+
+		Path path = Paths.get(getClass().getResource("/ACounter.mch").toURI());
+		StateSpace stateSpace = api.b_load(path.toAbsolutePath().toString());
 
 		// Define some expressions of iterest
 		ClassicalB jj = new ClassicalB("jj");
@@ -88,9 +91,10 @@ public class HelloProB {
 		System.out.println();
 	}
 
-	public static void main(String[] args) throws BException, IOException {
+	public static void main(String[] args) throws BException, IOException, URISyntaxException {
 
 		HelloProB m = INJECTOR.getInstance(HelloProB.class);
 		m.exampleUsage();
+		System.exit(0);
 	}
 }

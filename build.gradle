@@ -1,8 +1,13 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'application'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
 
 def prob_version = "2.0.0"
-def mainClass = "HelloProB"
+mainClassName = "example/HelloProB"
 
 repositories {
 	mavenCentral()
@@ -14,10 +19,4 @@ repositories {
 
 dependencies {
 	compile "de.hhu.stups:de.prob2.kernel:${prob_version}"
-}
-
-task run(type:JavaExec) {
-   main = mainClass
-   args = ["-s", "-local"]
-   classpath = sourceSets.main.runtimeClasspath
 }
