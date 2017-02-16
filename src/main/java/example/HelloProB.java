@@ -34,7 +34,7 @@ public class HelloProB {
 		this.api = api;
 	}
 
-	public void exampleUsage() throws BException, IOException, URISyntaxException {
+	public void exampleUsage() throws Exception {
 		System.out.println("ProB version: " + api.getVersion());
 		System.out.println();
 		System.out.println("Load classical B Machine");
@@ -91,7 +91,7 @@ public class HelloProB {
 		System.out.println();
 	}
 
-	public static void main(String[] args) throws BException, IOException, URISyntaxException {
+	public static void main(String[] args) throws Exception {
 
 		HelloProB m = INJECTOR.getInstance(HelloProB.class);
 		m.exampleUsage();
