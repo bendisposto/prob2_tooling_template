@@ -39,6 +39,8 @@ public class HelloProB {
 		System.out.println();
 		System.out.println("Load classical B Machine");
 
+
+/*
 		Path path = Paths.get(getClass().getResource("/ACounter.mch").toURI());
 		StateSpace stateSpace = api.b_load(path.toAbsolutePath().toString());
 
@@ -88,6 +90,24 @@ public class HelloProB {
 		for (Transition transition : operations) {
 			System.out.println(transition.getPrettyRep());
 		}
+		System.out.println();
+*/
+		System.out.println("Load Event B Machine");
+
+        Path path2 = Paths.get(getClass().getResource("/Lift/lift0.bcm").toURI());
+		StateSpace stateSpace2 = api.eventb_load(path2.toAbsolutePath().toString());
+
+		System.out.println("Construct Trace");
+		System.out.println();
+
+		Trace t2 = new Trace(stateSpace2);
+
+		for (int i = 0; i < 10; i++) {
+			t2 = t2.anyEvent(null);
+		}
+
+		System.out.println("Some human readable representation of a trace");
+		System.out.println(t2);
 		System.out.println();
 	}
 
