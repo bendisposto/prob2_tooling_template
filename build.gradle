@@ -1,22 +1,18 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'application'
+plugins {
+	id 'java'
+	id 'application'
+}
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 8
+targetCompatibility = 8
 
 
-def prob_version = "3.0.0"
 mainClassName = "example/HelloProB"
 
 repositories {
 	mavenCentral()
-	maven {
-		name "snapshot"
-		url "https://oss.sonatype.org/content/repositories/snapshots/"
-	}
 }
 
 dependencies {
-	compile "de.hhu.stups:de.prob2.kernel:${prob_version}"
+	implementation 'de.hhu.stups:de.prob2.kernel:3.15.0'
 }
