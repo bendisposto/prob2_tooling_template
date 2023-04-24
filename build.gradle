@@ -15,5 +15,5 @@ repositories {
 }
 
 dependencies {
-	implementation 'de.hhu.stups:de.prob2.kernel:3.15.0'
+	implementation group: "de.hhu.stups", name: "de.prob2.kernel", version: "4.12.0"
 }
