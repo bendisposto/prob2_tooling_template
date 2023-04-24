@@ -40,7 +40,9 @@ public class HelloProB {
 		System.out.println("Load classical B Machine");
 
 
-/*
+
+
+
 		Path path = Paths.get(getClass().getResource("/ACounter.mch").toURI());
 		StateSpace stateSpace = api.b_load(path.toAbsolutePath().toString());
 
@@ -91,7 +93,7 @@ public class HelloProB {
 			System.out.println(transition.getPrettyRep());
 		}
 		System.out.println();
-*/
+
 		System.out.println("Load Event B Machine");
 
         Path path2 = Paths.get(getClass().getResource("/Lift/lift0.bcm").toURI());
